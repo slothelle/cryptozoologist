@@ -1,6 +1,7 @@
 require "cryptozoologist/version"
 
-Dir["cryptozoologist/dictionaries/*.rb"].each { |file| require file }
+directory = "#{File.dirname(__FILE__)}/cryptozoologist/dictionaries/*.rb"
+Dir[directory].each { |file| require file }
 
 require "cryptozoologist/dictionary"
 require "cryptozoologist/dictionaries"
