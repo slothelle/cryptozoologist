@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Liz Abinante"]
   spec.email         = ["me@liz.codes"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Generates random strings from animal, clothing item, and color pairings."
+  spec.description   = "Cryptozoologist generates random strings from animal, clothing item, and color pairings. You could get something like 'orange-clownfish-turtleneck' or 'magenta-three-toed-sloth-shoe-horn'. It's fun and silly - it's also very simple, which is why it is used as an example for the Gem guide project."
+  spec.homepage      = "https://github.com/feministy/cryptozoologist"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
