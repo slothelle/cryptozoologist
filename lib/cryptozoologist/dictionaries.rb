@@ -13,11 +13,11 @@ module Cryptozoologist
     end
 
     def mythical
-      Mytical::LIST
+      Mythical::LIST
     end
 
     private def word_lists
-      [ Common::LIST, Mytical::LIST ]
+      [ Common::LIST, Mythical::LIST ]
     end
   end
 end
