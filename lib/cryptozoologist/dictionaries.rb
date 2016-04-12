@@ -12,7 +12,7 @@ module Cryptozoologist
       Common::LIST
     end
 
-    def mytical
+    def mythical
       Mytical::LIST
     end
 
