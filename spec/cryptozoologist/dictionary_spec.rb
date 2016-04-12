@@ -5,8 +5,8 @@ describe Cryptozoologist::Dictionary do
     @dictionary = Cryptozoologist::Dictionary.new
   end
 
-  it 'has a word list' do
-    expect(@dictionary.words.length).to be > 1
+  it 'has an animal list' do
+    expect(@dictionary.animals.length).to be > 1
   end
 
   it 'contains Common animals' do
