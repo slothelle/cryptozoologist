@@ -4,7 +4,7 @@ module Cryptozoologist
 
     def animals
       list = []
-      word_lists.each { |word_bank| list << word_bank }
+      animal_lists.each { |word_bank| list << word_bank }
       list.flatten
     end
 
