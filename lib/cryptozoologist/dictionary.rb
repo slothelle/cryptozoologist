@@ -1,13 +1,13 @@
 module Cryptozoologist
   class Dictionary
     def initialize
-      @words = []
+      @animals = []
     end
 
-    def words
-      @words if @words.any?
-      @words = Dictionaries.words
-      @words
+    def animals
+      @animals if @animals.any?
+      @animals = Dictionaries.animals
+      @animals
     end
   end
 end
