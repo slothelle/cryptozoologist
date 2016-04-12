@@ -11,11 +11,11 @@ describe Cryptozoologist::Dictionary do
 
   it 'contains Common animals' do
     common = Cryptozoologist::Dictionaries::Common::LIST
-    expect(@dictionary.words.includes?(common.sample)).to be_true
+    expect(@dictionary.words.include?(common.sample)).to be_true
   end
 
   it 'contains Mythical creatures' do
     mythical = Cryptozoologist::Dictionaries::Mythical::LIST
-    expect(@dictionary.words.includes?(mythical.sample)).to be_true
+    expect(@dictionary.words.include?(mythical.sample)).to be_true
   end
 end
