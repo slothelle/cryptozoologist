@@ -1,4 +1,4 @@
-require './spec_helper'
+require '../spec_helper'
 
 describe Cryptozoologist::Dictionary do
   it 'is shiny' do
