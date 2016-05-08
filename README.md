@@ -32,4 +32,20 @@ Right now, this gem doesn't do much of anything except over architect a series o
 
     dictionary = Cryptozoologist::Dictionary.new
     animals = dictionary.animals
-    animals.sample
+    animals.sample # => "sun bear"
+
+**Exclude animal types:**
+
+Valid types to exclude;
+
+- `:common`
+- `:mythical`
+
+*Note:* you can only exclude one or you wan't have any animals!
+
+    Cryptozoologist.configurre do |config|
+      configu.exclude = [:common]
+    end
+    dictionary = Cryptozoologist::Dictionary.new
+    animals = dictionary.animals
+    animals.sample # => "crumple horned snorkack"

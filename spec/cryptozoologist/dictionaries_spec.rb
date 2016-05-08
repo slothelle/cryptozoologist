@@ -7,12 +7,12 @@ describe Cryptozoologist::Dictionaries do
     end
 
     it 'contains Common animals' do
-      common = Cryptozoologist::Dictionaries::Animals::Common::LIST
+      common = Cryptozoologist::Dictionaries::Animals::Common.list
       expect(Cryptozoologist::Dictionaries.animals.include?(common.sample)).to be true
     end
 
     it 'contains Mythical creatures' do
-      mythical = Cryptozoologist::Dictionaries::Animals::Mythical::LIST
+      mythical = Cryptozoologist::Dictionaries::Animals::Mythical.list
       expect(Cryptozoologist::Dictionaries.animals.include?(mythical.sample)).to be true
     end
   end
