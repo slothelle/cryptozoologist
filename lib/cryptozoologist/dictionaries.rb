@@ -8,6 +8,9 @@ module Cryptozoologist
       list.flatten
     end
 
+    def colors
+    end
+
     def library
       {
         common: Animals::Common,
