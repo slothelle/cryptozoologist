@@ -41,7 +41,7 @@ Valid types to exclude;
 - `:common`
 - `:mythical`
 
-*Note:* you can only exclude one or you wan't have any animals!
+*Note:* you can only exclude one or you won't have any animals!
 
     Cryptozoologist.configurre do |config|
       configu.exclude = [:common]
