@@ -4,7 +4,7 @@ module Cryptozoologist
 
     def animals
       list = []
-      filtered.each { |word_bank| list << word_bank.list }
+      filtered(:animals).each { |word_bank| list << word_bank.list }
       list.flatten
     end
 
@@ -13,13 +13,19 @@ module Cryptozoologist
 
     def library
       {
-        common: Animals::Common,
-        mythical: Animals::Mythical
+        animals: {
+          common: Animals::Common,
+          mythical: Animals::Mythical
+        },
+        colors: {
+          paint: Colors::Paint,
+          web: Colors::WebSafe
+        }
       }
     end
 
-    private def filtered
-      dictionaries = library.reject do |key, value|
+    private def filtered(key)
+      dictionaries = library[key].reject do |key, value|
         Cryptozoologist.configuration.exclude.include?(key)
       end
       dictionaries.values
