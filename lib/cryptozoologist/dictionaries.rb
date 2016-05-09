@@ -3,12 +3,11 @@ module Cryptozoologist
     extend self
 
     def animals
-      list = []
-      filtered(:animals).each { |word_bank| list << word_bank.list }
-      list.flatten
+      create_list(:animals)
     end
 
     def colors
+      create_list(:colors)
     end
 
     def library
@@ -24,7 +23,14 @@ module Cryptozoologist
       }
     end
 
-    private def filtered(key)
+    private
+    def create_list(key)
+      list = []
+      filter_library(:animals).each { |word_bank| list << word_bank.list }
+      list.flatten
+    end
+
+    def filter_library(key)
       dictionaries = library[key].reject do |key, value|
         Cryptozoologist.configuration.exclude.include?(key)
       end
