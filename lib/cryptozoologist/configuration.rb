@@ -15,7 +15,7 @@ module Cryptozoologist
     private
     def valid_exclusions
       keys = []
-      Cryptozoologist.dictionaries.each { |key, value| keys += value.keys }
+      Cryptozoologist.subdictionaries.each { |key, value| keys += value.keys }
       keys
     end
   end
