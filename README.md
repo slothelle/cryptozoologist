@@ -47,9 +47,10 @@ Exclude:
 **Example**
 
 ```ruby
-  Cryptozoologist.configurre do |config|
+  Cryptozoologist.configure do |config|
     config.exclude = [:common]
   end
+
   dictionary = Cryptozoologist::Dictionary.new
   animals = dictionary.animals
   animals.sample # => "crumple horned snorkack"
