@@ -6,6 +6,10 @@ module Cryptozoologist
       create_list(:animals)
     end
 
+    def clothing
+      Clothing.list
+    end
+
     def colors
       create_list(:colors)
     end

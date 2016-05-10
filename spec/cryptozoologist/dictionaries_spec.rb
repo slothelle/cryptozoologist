@@ -39,7 +39,7 @@ describe Cryptozoologist::Dictionaries do
         config.exclude = [:mythical]
       end
       mythical = Cryptozoologist::Dictionaries::Animals::Mythical.list
-      expect(Cryptozoologist::Dictionaries.animals.include?(mythical.sample)).to be_falsy
+      expect(Cryptozoologist::Dictionaries.animals.include?(mythical.sample)).to be false
     end
   end
 
@@ -69,7 +69,32 @@ describe Cryptozoologist::Dictionaries do
         config.exclude = [:paint]
       end
       paint = Cryptozoologist::Dictionaries::Colors::Paint.list
-      expect(Cryptozoologist::Dictionaries.colors.include?(paint.sample)).to be_falsy
+      expect(Cryptozoologist::Dictionaries.colors.include?(paint.sample)).to be false
+    end
+  end
+
+  context '#clothing' do
+    it 'has a clothing list' do
+      expect(Cryptozoologist::Dictionaries.clothing.length).to be > 1
+    end
+
+    it 'contains paint colors' do
+      clothing = Cryptozoologist::Dictionaries::Clothing.list
+      expect(Cryptozoologist::Dictionaries.clothing.include?(clothing.sample)).to be true
+    end
+
+    it 'does not contain other types of words' do
+      clothing = Cryptozoologist::Dictionaries::Clothing.list
+      expect(clothing.sort).to eq(Cryptozoologist::Dictionaries.clothing.sort)
+    end
+
+    it 'is not a valid exclusion' do
+      Cryptozoologist.configure do |config|
+        config.exclude = [:clothing]
+      end
+
+      clothing = Cryptozoologist::Dictionaries::Clothing.list
+      expect(Cryptozoologist::Dictionaries.clothing.include?(clothing.sample)).to be true
     end
   end
 end
