@@ -46,21 +46,27 @@ Exclude:
 
 **Example**
 
-    Cryptozoologist.configurre do |config|
-      config.exclude = [:common]
-    end
-    dictionary = Cryptozoologist::Dictionary.new
-    animals = dictionary.animals
-    animals.sample # => "crumple horned snorkack"
+```ruby
+  Cryptozoologist.configurre do |config|
+    config.exclude = [:common]
+  end
+  dictionary = Cryptozoologist::Dictionary.new
+  animals = dictionary.animals
+  animals.sample # => "crumple horned snorkack"
+```
 
 **Get a random animal**
 
-    dictionary = Cryptozoologist::Dictionary.new
-    animals = dictionary.animals
-    animals.sample # => "sun bear"
+```ruby
+  dictionary = Cryptozoologist::Dictionary.new
+  animals = dictionary.animals
+  animals.sample # => "sun bear"
+```
 
 **Get a random color**
 
-    dictionary = Cryptozoologist::Dictionary.new
-    colors = dictionary.colors
-    colors.sample # => "pink"
+```ruby
+  dictionary = Cryptozoologist::Dictionary.new
+  colors = dictionary.colors
+  colors.sample # => "pink"
+```
