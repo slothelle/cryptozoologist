@@ -26,7 +26,7 @@ module Cryptozoologist
     private
     def create_list(key)
       list = []
-      filter_library(:animals).each { |word_bank| list << word_bank.list }
+      filter_library(key).each { |word_bank| list << word_bank.list }
       list.flatten
     end
 
