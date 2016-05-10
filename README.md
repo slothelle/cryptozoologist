@@ -28,6 +28,11 @@ Or install it yourself as:
 
 Right now, this gem doesn't do much of anything except over architect a series of word lists.
 
+**Available word lists**
+
+- colors
+- animals
+
 **Configuration options**
 
 Exclude:
@@ -48,13 +53,13 @@ Exclude:
     animals = dictionary.animals
     animals.sample # => "crumple horned snorkack"
 
-**Get a random animal:**
+**Get a random animal**
 
     dictionary = Cryptozoologist::Dictionary.new
     animals = dictionary.animals
     animals.sample # => "sun bear"
 
-**Get a random color:**
+**Get a random color**
 
     dictionary = Cryptozoologist::Dictionary.new
     colors = dictionary.colors
