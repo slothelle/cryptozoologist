@@ -28,24 +28,39 @@ Or install it yourself as:
 
 Right now, this gem doesn't do much of anything except over architect a series of word lists.
 
-**Get a random animal:**
+**Available word lists**
+
+- colors
+- animals
+
+**Configuration options**
+
+Exclude:
+
+- animals:
+  - `:common`, `:mythical`
+- colors:
+    - `:paint`, `:web`
+
+*Note:* you can only exclude one of each or you won't have any words in your list!
+
+**Example**
+
+    Cryptozoologist.configurre do |config|
+      config.exclude = [:common]
+    end
+    dictionary = Cryptozoologist::Dictionary.new
+    animals = dictionary.animals
+    animals.sample # => "crumple horned snorkack"
+
+**Get a random animal**
 
     dictionary = Cryptozoologist::Dictionary.new
     animals = dictionary.animals
     animals.sample # => "sun bear"
 
-**Exclude animal types:**
+**Get a random color**
 
-Valid types to exclude;
-
-- `:common`
-- `:mythical`
-
-*Note:* you can only exclude one or you wan't have any animals!
-
-    Cryptozoologist.configurre do |config|
-      configu.exclude = [:common]
-    end
     dictionary = Cryptozoologist::Dictionary.new
-    animals = dictionary.animals
-    animals.sample # => "crumple horned snorkack"
+    colors = dictionary.colors
+    colors.sample # => "pink"
