@@ -16,5 +16,13 @@ module Cryptozoologist
       @colors = Dictionaries.colors
       @colors
     end
+
+    def clothing
+      Dictionaries.clothing
+    end
+
+    def quantity
+      Dictionaries.quantity
+    end
   end
 end
