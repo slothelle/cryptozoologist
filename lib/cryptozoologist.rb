@@ -2,8 +2,8 @@ require "cryptozoologist/version"
 require "cryptozoologist/errors"
 require "cryptozoologist/configuration"
 
-directory = "#{File.dirname(__FILE__)}/cryptozoologist/dictionaries/*/*.rb"
-Dir[directory].each { |file| require file }
+dictionaries = "#{File.dirname(__FILE__)}/cryptozoologist/dictionaries/**/*.rb"
+Dir[dictionaries].each { |file| require file }
 
 require "cryptozoologist/dictionary"
 require "cryptozoologist/dictionaries"
@@ -26,7 +26,7 @@ module Cryptozoologist
   end
 
   protected
-  def self.dictionaries
+  def self.subdictionaries
     Dictionaries.library
   end
 end

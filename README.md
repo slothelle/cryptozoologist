@@ -32,6 +32,8 @@ Right now, this gem doesn't do much of anything except over architect a series o
 
 - colors
 - animals
+- clothing
+- quantity
 
 **Configuration options**
 
@@ -71,3 +73,21 @@ Exclude:
   colors = dictionary.colors
   colors.sample # => "pink"
 ```
+
+**Get a random measure of quantity**
+
+```ruby
+  dictionary = Cryptozoologist::Dictionary.new
+  quantity = dictionary.quantity
+  quantity.sample # => "limitless"
+```
+
+**Get a random item of clothing**
+
+```ruby
+  dictionary = Cryptozoologist::Dictionary.new
+  clothing = dictionary.clothing
+  clothing.sample # => "suspenders"
+```
+
+
