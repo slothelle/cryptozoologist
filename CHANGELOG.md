@@ -12,3 +12,4 @@
 ## 1.3.0
 
 - add `clothing` dictionary
+- add `quantity` dictionary

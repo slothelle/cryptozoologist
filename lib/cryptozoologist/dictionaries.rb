@@ -14,6 +14,10 @@ module Cryptozoologist
       create_list(:colors)
     end
 
+    def quantity
+      Quantity.list
+    end
+
     def library
       {
         animals: {
