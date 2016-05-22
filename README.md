@@ -42,7 +42,7 @@ Exclude:
 - animals:
   - `:common`, `:mythical`
 - colors:
-    - `:paint`, `:web`
+  - `:paint`, `:web`
 
 *Note:* you can only exclude one of each or you won't have any words in your list!
 
