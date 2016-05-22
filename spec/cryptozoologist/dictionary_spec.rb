@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe Cryptozoologist::Dictionary do
   before do
-    @dictionary = Cryptozoologist::Dictionary.new
+    @dictionary = Cryptozoologist::Dictionary
   end
 
   lists = [:animals, :colors, :clothing, :quantity]
