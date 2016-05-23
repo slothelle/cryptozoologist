@@ -25,7 +25,23 @@ module Cryptozoologist
     yield(configuration)
   end
 
-  protected
+  def self.generate
+    string = ""
+    
+    @configuration.order.each do |library|
+      word = Dictionary.send(library).sample
+      compound_word = word.split(' ').join(@configuration.delimeter)
+      string += "#{compound_word}"
+
+      unless library == @configuration.order.last
+        string += "#{@configuration.delimeter}" 
+      end
+    end
+
+    string
+  end
+
+  protected 
   def self.subdictionaries
     Dictionaries.library
   end
