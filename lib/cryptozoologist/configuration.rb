@@ -1,11 +1,12 @@
 module Cryptozoologist
   class Configuration
-    attr_reader :exclude, :delimeter, :order
+    attr_reader :exclude, :delimeter, :order, :include
 
     def initialize
       @exclude = []
       @delimeter = "-"
       @order = [:colors, :animals, :clothing]
+      @include = []
     end
 
     def order=(list)
@@ -22,10 +23,20 @@ module Cryptozoologist
       @delimeter = string
     end
 
+    def include=(inclusions)
+      raise Errors::Configuration, "Inclusions must be an array" unless inclusions.is_a?(Array)
+
+      @include = inclusions.select { |e| valid_inclusions.include?(e) }
+    end
+
     def exclude=(exclusions)
       raise Errors::Configuration, "Exclusions must be an array" unless exclusions.is_a?(Array)
 
       @exclude = exclusions.select { |e| valid_exclusions.include?(e) }
+    end
+
+    def include_quantity?
+      @include.include?(:quantity)
     end
 
     private
@@ -37,6 +48,10 @@ module Cryptozoologist
       keys = []
       Cryptozoologist.subdictionaries.each { |key, value| keys += value.keys }
       keys
+    end
+
+    def valid_inclusions
+      [:quantity]
     end
   end
 end

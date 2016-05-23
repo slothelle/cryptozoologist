@@ -27,8 +27,11 @@ module Cryptozoologist
 
   def self.generate
     string = ""
-    
-    @configuration.order.each do |library|
+    order = @configuration.order
+
+    order.unshift(:quantity) if @configuration.include_quantity?
+
+    order.each do |library|
       word = Dictionary.send(library).sample
       compound_word = word.split(' ').join(@configuration.delimeter)
       string += "#{compound_word}"
