@@ -53,40 +53,35 @@ Exclude:
     config.exclude = [:common]
   end
 
-  dictionary = Cryptozoologist::Dictionary.new
-  animals = dictionary.animals
+  animals = Cryptozoologist::Dictionary.animals
   animals.sample # => "crumple horned snorkack"
 ```
 
 **Get a random animal**
 
 ```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  animals = dictionary.animals
+  animals = Cryptozoologist::Dictionary.animals
   animals.sample # => "sun bear"
 ```
 
 **Get a random color**
 
 ```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  colors = dictionary.colors
+  colors = Cryptozoologist::Dictionary.colors
   colors.sample # => "pink"
 ```
 
 **Get a random measure of quantity**
 
 ```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  quantity = dictionary.quantity
+  quantity = Cryptozoologist::Dictionary.quantity
   quantity.sample # => "limitless"
 ```
 
 **Get a random item of clothing**
 
 ```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  clothing = dictionary.clothing
+  clothing = Cryptozoologist::Dictionary.clothing
   clothing.sample # => "suspenders"
 ```
 
