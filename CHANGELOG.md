@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+- specify ruby 2.0.0 or higher requirement (wow, i hope you're not using 1.9.3 still...)
+
 ## 2.0.0
 
 - create `Cryptozoologist.generate` method
