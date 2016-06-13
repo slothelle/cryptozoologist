@@ -1,6 +1,10 @@
 require_relative '../spec_helper'
 
 describe Cryptozoologist::Configuration do
+  before do
+    Cryptozoologist.reset
+  end
+
   context 'without configuration block' do
     it 'returns an empty Configuration' do
       expect(Cryptozoologist.configuration).to be_instance_of(Cryptozoologist::Configuration)
@@ -23,6 +27,32 @@ describe Cryptozoologist::Configuration do
           config.exclude = 1
         end
       }.to raise_error(Cryptozoologist::Errors::Configuration)
+    end
+  end
+
+  context 'inclusions' do
+    it 'filters out invalid inclusions' do
+      Cryptozoologist.configure do |config|
+        config.include = [:tacos]
+      end
+
+      expect(Cryptozoologist.configuration.include).to eq([])
+    end
+
+    it 'requires an array' do
+      expect {
+        Cryptozoologist.configure do |config|
+          config.include = 1
+        end
+      }.to raise_error(Cryptozoologist::Errors::Configuration)
+    end
+
+    it 'sets valid inclusions' do
+      Cryptozoologist.configure do |config|
+        config.include = [:quantity]
+      end
+
+      expect(Cryptozoologist.configuration.include).to eq([:quantity])
     end
   end
 

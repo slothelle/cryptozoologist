@@ -12,7 +12,8 @@ module Cryptozoologist
     def order=(list)
       raise Errors::Configuration, "Order must be an array" unless list.is_a?(Array)
       raise Errors::Configuration, "Order must contain 3 items" unless list.length == 3
-      raise Errors::Configuration, "Invalid order setting provided" if list.any? { |e| !valid_order.include?(e) }
+      invalid_keys = list.select { |e| !valid_order.include?(e) }
+      raise Errors::Configuration, "Invalid order setting provided: #{invalid_keys}" unless invalid_keys.empty?
 
       @order = list
     end
