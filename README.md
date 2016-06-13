@@ -40,13 +40,13 @@ Cryptozoologist.generate # => 'forest-green-wasp-getup'
 
 ### Generate a random color, animal, clothing item, or measure of quantity
 
-These dictionaries will also follow your configuration settings (see below).
+These dictionaries will also follow your configuration settings (see below), _except for your delimeter_ (the delimeter is not used here).
 
 ```ruby
-Cryptozoologist::Dictionary.animals.sample
-Cryptozoologist::Dictionary.clothing.sample
-Cryptozoologist::Dictionary.colors.sample
-Cryptozoologist::Dictionary.quantity.sample
+Cryptozoologist::Dictionary.animals.sample # => 'sun bear'
+Cryptozoologist::Dictionary.clothing.sample # => 'fedora'
+Cryptozoologist::Dictionary.colors.sample # => 'light pink'
+Cryptozoologist::Dictionary.quantity.sample # => 'limitless'
 ```
 
 ## Configuration 
