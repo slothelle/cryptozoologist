@@ -2,11 +2,7 @@
 
 _Cryptozoologist is a fun little gem written as part of the [Gem guide](https://github.com/feministy/gem-guide) project._
 
-Cryptozoologist generates random strings from animal, clothing item, and color pairings. You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly - it's also very simple, which is why it is used as an example for the Gem guide project.
-
-This gem is still in active devemopment; complete documentation _will be added_ as the gem (and the Gem guide) progress!
-
-_(No, really, it will be added: it's part of the guide!)_
+Cryptozoologist generates random strings from animal, clothing item, and color pairings. You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not?
 
 ## Installation
 
@@ -26,68 +22,87 @@ Or install it yourself as:
 
 ## Usage
 
-Right now, this gem doesn't do much of anything except over architect a series of word lists.
+`Cryptozoologist.generate` method will return a string separated by `-` containing: a color, an animal, and an item of clothing.
 
-**Available word lists**
+Example:
 
-- colors
-- animals
-- clothing
-- quantity
+```ruby
+Cryptozoologist.generate # => 'steel-blue-tang-flak-jacket'
+Cryptozoologist.generate # => 'blanched-almond-mandrill-headscarf'
+Cryptozoologist.generate # => 'frozen-in-time-cockroach-bracelet'
+Cryptozoologist.generate # => 'medium-sea-green-lobster-coat'
+Cryptozoologist.generate # => 'blue-flying-squirrel-trench-coat'
+Cryptozoologist.generate # => 'thistle-toucan-formal-wear'
+Cryptozoologist.generate # => 'aquamarine-lemming-white-tie'
+Cryptozoologist.generate # => 'tomato-cerberus-sweatshirt'
+Cryptozoologist.generate # => 'forest-green-wasp-getup'
+```
 
-**Configuration options**
+### Generate a random color, animal, clothing item, or measure of quantity
 
-Exclude:
+These dictionaries will also follow your configuration settings (see below), _except for your delimeter_ (the delimeter is not used here).
 
-- animals:
+```ruby
+Cryptozoologist::Dictionary.animals.sample # => 'sun bear'
+Cryptozoologist::Dictionary.clothing.sample # => 'fedora'
+Cryptozoologist::Dictionary.colors.sample # => 'light pink'
+Cryptozoologist::Dictionary.quantity.sample # => 'limitless'
+```
+
+## Configuration 
+
+Configuration blocks take the following options:
+
+```ruby
+  Cryptozoologist.configure do |config|
+    config.exclude = []
+    config.include = []
+    config.order = []
+    config.delimeter = ''
+  end
+```
+
+- `exclude` (array of symbols) allows you to exclude dictionary subtypes; defaults to no exclusions
+- `include` (array of symbols) allows you to include optional dictionaries; defaults to no inclusions
+- `order` (array of symbols) allows you to change the word order; defaults to animal-color-clothing
+- `delimeter` (string) allows you to specify a delimeter; defaults to `-`
+
+### Configuration options
+
+**Include (`config.include`, `[]`):**
+
+- if you include quantity, it will be added to the front of your generated string
+- `:quantity`
+
+**Exclude (`config.exclude`, `[]`):**
+
+- animals (1 of 2 allowed):
   - `:common`, `:mythical`
-- colors:
-    - `:paint`, `:web`
+- colors (1 of 2 allowed):
+  - `:paint`, `:web`
 
-*Note:* you can only exclude one of each or you won't have any words in your list!
+**Order (`config.order`, `[]`): **
 
-**Example**
+- **must provide all 3 keys** as an array in the order in which you want words to appear
+- `[:animals, :colors, :clothing]`
+
+**Delimeter (`config.delimeter`, `''`):**
+
+- defaults to `'-'`
+- any string is valid
+
+#### Example
 
 ```ruby
   Cryptozoologist.configure do |config|
     config.exclude = [:common]
+    config.include = [:quantity]
+    config.order = [:colors, :animals, :clothing]
+    config.delimeter = '_'
   end
 
-  dictionary = Cryptozoologist::Dictionary.new
-  animals = dictionary.animals
-  animals.sample # => "crumple horned snorkack"
+  Cryptozoologist.generate # => 'masses_yellow_zombie_shrug'
+  Cryptozoologist.generate # => 'gazillions_polar_drift_goblin_umbrella'
+  Cryptozoologist.generate # => 'wide_orange_cynocephalus_helmet'
+  Cryptozoologist.generate # => 'some_light_pink_moke_fedora'
 ```
-
-**Get a random animal**
-
-```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  animals = dictionary.animals
-  animals.sample # => "sun bear"
-```
-
-**Get a random color**
-
-```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  colors = dictionary.colors
-  colors.sample # => "pink"
-```
-
-**Get a random measure of quantity**
-
-```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  quantity = dictionary.quantity
-  quantity.sample # => "limitless"
-```
-
-**Get a random item of clothing**
-
-```ruby
-  dictionary = Cryptozoologist::Dictionary.new
-  clothing = dictionary.clothing
-  clothing.sample # => "suspenders"
-```
-
-

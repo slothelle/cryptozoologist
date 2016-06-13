@@ -1,20 +1,13 @@
 module Cryptozoologist
-  class Dictionary
-    def initialize
-      @animals = []
-      @colors = []
-    end
+  module Dictionary
+    extend self
 
     def animals
-      @animals if @animals.any?
-      @animals = Dictionaries.animals
-      @animals
+      Dictionaries.animals
     end
 
     def colors
-      @colors if @colors.any?
-      @colors = Dictionaries.colors
-      @colors
+      Dictionaries.colors
     end
 
     def clothing
