@@ -40,7 +40,7 @@ Cryptozoologist.generate # => 'forest-green-wasp-getup'
 
 ### Generate a random color, animal, clothing item, or measure of quantity
 
-These dictionaries will also follow your configuration settings (see below), _except for your delimeter_ (the delimeter is not used here).
+These dictionaries will also follow your configuration settings (see below), _except for your delimiter_ (the delimiter is not used here).
 
 ```ruby
 Cryptozoologist::Dictionary.animals.sample # => 'sun bear'
@@ -58,14 +58,14 @@ Configuration blocks take the following options:
     config.exclude = []
     config.include = []
     config.order = []
-    config.delimeter = ''
+    config.delimiter = ''
   end
 ```
 
 - `exclude` (array of symbols) allows you to exclude dictionary subtypes; defaults to no exclusions
 - `include` (array of symbols) allows you to include optional dictionaries; defaults to no inclusions
 - `order` (array of symbols) allows you to change the word order; defaults to animal-color-clothing
-- `delimeter` (string) allows you to specify a delimeter; defaults to `-`
+- `delimiter` (string) allows you to specify a delimiter; defaults to `-`
 
 ### Configuration options
 
@@ -86,7 +86,7 @@ Configuration blocks take the following options:
 - **must provide all 3 keys** as an array in the order in which you want words to appear
 - `[:animals, :colors, :clothing]`
 
-**Delimeter (`config.delimeter`, `''`):**
+**delimiter (`config.delimiter`, `''`):**
 
 - defaults to `'-'`
 - any string is valid
@@ -98,7 +98,7 @@ Configuration blocks take the following options:
     config.exclude = [:common]
     config.include = [:quantity]
     config.order = [:colors, :animals, :clothing]
-    config.delimeter = '_'
+    config.delimiter = '_'
   end
 
   Cryptozoologist.generate # => 'masses_yellow_zombie_shrug'

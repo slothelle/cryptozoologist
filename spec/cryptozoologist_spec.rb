@@ -20,7 +20,7 @@ describe Cryptozoologist do
       expect(Cryptozoologist.generate).to be_instance_of(String)
     end
 
-    it 'returns a string with the delimeter' do
+    it 'returns a string with the delimiter' do
       expect(Cryptozoologist.generate.match('-')).to be_instance_of(MatchData)
     end
   end

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+- added test coverage
+- fix spelling of `delimiter`
+
 ## 2.0.1
 
 - specify ruby 2.0.0 or higher requirement (wow, i hope you're not using 1.9.3 still...)

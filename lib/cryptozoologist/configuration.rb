@@ -1,10 +1,10 @@
 module Cryptozoologist
   class Configuration
-    attr_reader :exclude, :delimeter, :order, :include
+    attr_reader :exclude, :delimiter, :order, :include
 
     def initialize
       @exclude = []
-      @delimeter = "-"
+      @delimiter = "-"
       @order = [:colors, :animals, :clothing]
       @include = []
     end
@@ -18,10 +18,10 @@ module Cryptozoologist
       @order = list
     end
 
-    def delimeter=(string)
-      raise Errors::Configuration, "Delimeter must be a a string" unless string.is_a?(String)
+    def delimiter=(string)
+      raise Errors::Configuration, "delimiter must be a a string" unless string.is_a?(String)
 
-      @delimeter = string
+      @delimiter = string
     end
 
     def include=(inclusions)
