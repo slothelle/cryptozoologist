@@ -33,11 +33,11 @@ module Cryptozoologist
 
     order.each do |library|
       word = Dictionary.send(library).sample
-      compound_word = word.split(' ').join(@configuration.delimeter)
+      compound_word = word.split(' ').join(@configuration.delimiter)
       string += "#{compound_word}"
 
       unless library == @configuration.order.last
-        string += "#{@configuration.delimeter}" 
+        string += "#{@configuration.delimiter}" 
       end
     end
 
