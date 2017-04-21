@@ -22,15 +22,13 @@ module Cryptozoologist
   end
 
   def self.configure
+    self.reset
     yield(configuration)
   end
 
   def self.generate
     string = ""
     order = @configuration.order
-
-    order.unshift(:quantity) if @configuration.include_quantity?
-
     order.each do |library|
       word = Dictionary.send(library).sample
       compound_word = word.split(' ').join(@configuration.delimiter)
