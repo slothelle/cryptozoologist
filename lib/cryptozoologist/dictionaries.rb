@@ -31,6 +31,14 @@ module Cryptozoologist
       }
     end
 
+    def filler
+      Filler.list
+    end
+
+    def punctuation
+      Punctuation.list
+    end
+
     private
     def create_list(key)
       list = []
