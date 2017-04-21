@@ -1,6 +1,8 @@
 # Cryptozoologist [![Build Status](https://travis-ci.org/feministy/cryptozoologist.svg?branch=master)](https://travis-ci.org/feministy/cryptozoologist)
 
-Cryptozoologist generates random strings from animal, clothing item, and color pairings. You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not?
+Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences. 
+
+You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not? The gem can be configured to use a custom delimiter, exclude dictionaries, or add in speciality dictionaries.
 
 ## Installation
 
@@ -20,31 +22,54 @@ Or install it yourself as:
 
 ## Usage
 
-`Cryptozoologist.generate` method will return a string separated by `-` containing: a color, an animal, and an item of clothing.
+Cryptozoologist provides two main functions:
+
+* `Cryptozoologist.random`: returns a string separated by `-` (or other custom delimiter, uses the dictionaries per your configuration) (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
+* `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences (using the dictionaries per your configuration), separated by punctuation randomly selected from `["!", ".", "?"]`
+
+See below for more detailed usage on each method.
+
+### Secret usage
+
+If you just want a word list, you can tap directly into the dictionaries. Each dictionary returns an array of strings, allowing you to use the Ruby enumerators that you want on your word list.
+
+The complete list of dictionaries includes:
+
+* `Cryptozoologist::Dictionary.animals`
+* `Cryptozoologist::Dictionary.clothing`
+* `Cryptozoologist::Dictionary.colors`
+* `Cryptozoologist::Dictionary.quantity`
+* `Cryptozoologist::Dictionary.filler` ("a", "the", etc)
+* `Cryptozoologist::Dictionary.punctuation`
+
+### `Cryptozoologist.random`
+
+The `Cryptozoologist.random` method will return a string separated by `-` containing: a color, an animal, and an item of clothing.
 
 Example:
 
 ```ruby
-Cryptozoologist.generate # => 'steel-blue-tang-flak-jacket'
-Cryptozoologist.generate # => 'blanched-almond-mandrill-headscarf'
-Cryptozoologist.generate # => 'frozen-in-time-cockroach-bracelet'
-Cryptozoologist.generate # => 'medium-sea-green-lobster-coat'
-Cryptozoologist.generate # => 'blue-flying-squirrel-trench-coat'
-Cryptozoologist.generate # => 'thistle-toucan-formal-wear'
-Cryptozoologist.generate # => 'aquamarine-lemming-white-tie'
-Cryptozoologist.generate # => 'tomato-cerberus-sweatshirt'
-Cryptozoologist.generate # => 'forest-green-wasp-getup'
+Cryptozoologist.random # => 'steel-blue-tang-flak-jacket'
+Cryptozoologist.random # => 'blanched-almond-mandrill-headscarf'
+Cryptozoologist.random # => 'frozen-in-time-cockroach-bracelet'
+Cryptozoologist.random # => 'medium-sea-green-lobster-coat'
+Cryptozoologist.random # => 'blue-flying-squirrel-trench-coat'
+Cryptozoologist.random # => 'thistle-toucan-formal-wear'
+Cryptozoologist.random # => 'aquamarine-lemming-white-tie'
+Cryptozoologist.random # => 'tomato-cerberus-sweatshirt'
+Cryptozoologist.random # => 'forest-green-wasp-getup'
 ```
 
-### Generate a random color, animal, clothing item, or measure of quantity
+### `Cryptozoologist.lorem(sentence_count)`
 
-These dictionaries will also follow your configuration settings (see below), _except for your delimiter_ (the delimiter is not used here).
+`Cryptozoologist.lorem(sentence_count)` will return a string consisting of the number of sentences you request.
+
+Example:
 
 ```ruby
-Cryptozoologist::Dictionary.animals.sample # => 'sun bear'
-Cryptozoologist::Dictionary.clothing.sample # => 'fedora'
-Cryptozoologist::Dictionary.colors.sample # => 'light pink'
-Cryptozoologist::Dictionary.quantity.sample # => 'limitless'
+Cryptozoologist.lorem(3) # => 'Black rhinoceros and it hundreds at flamingo dream oodles acres gear it plum serval shrug phoenix blazer washed khaki! Phantom mist the gazillions hem alicorn light golden rod yellow leopard cat troop and galoshes a be. Are there stellers sea cow billions be plum indri dodger blue shift to t shirt cheetah tiara tons sky blue miles?'
+
+Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff chocolate wide tights yak bundles the be?'
 ```
 
 ## Configuration 
@@ -79,7 +104,7 @@ Configuration blocks take the following options:
 - colors (1 of 2 allowed):
   - `:paint`, `:web`
 
-**Order (`config.order`, `[]`): **
+**Order (`config.order`, `[]`):**
 
 - **must provide all 3 keys** as an array in the order in which you want words to appear
 - `[:animals, :colors, :clothing]`
@@ -89,7 +114,7 @@ Configuration blocks take the following options:
 - defaults to `'-'`
 - any string is valid
 
-#### Example
+#### Example with all possible settings
 
 ```ruby
   Cryptozoologist.configure do |config|
@@ -99,8 +124,8 @@ Configuration blocks take the following options:
     config.delimiter = '_'
   end
 
-  Cryptozoologist.generate # => 'masses_yellow_zombie_shrug'
-  Cryptozoologist.generate # => 'gazillions_polar_drift_goblin_umbrella'
-  Cryptozoologist.generate # => 'wide_orange_cynocephalus_helmet'
-  Cryptozoologist.generate # => 'some_light_pink_moke_fedora'
+  Cryptozoologist.random # => 'masses_yellow_zombie_shrug'
+  Cryptozoologist.random # => 'gazillions_polar_drift_goblin_umbrella'
+  Cryptozoologist.random # => 'wide_orange_cynocephalus_helmet'
+  Cryptozoologist.random # => 'some_light_pink_moke_fedora'
 ```

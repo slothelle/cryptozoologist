@@ -2,6 +2,8 @@
 
 ## 3.0.0
 
+**Important!!** Now requires Ruby 2.3.0 or higher (as of writing, Ruby 2.2 is in security maintenance mode, while 2.3 is in normal maintanance mode).
+
 **New features!**
 
 - now with lorem ipsum generation! 
@@ -9,6 +11,7 @@
 **API Changes**
 
 - configuration is now  _reset_ if you call the `configure` block again after having already called it
+- renamed `Cryptozoologist.generate` to `Cryptozoologist.random` (backwards compatible)
 
 **Bug fixes**
 
