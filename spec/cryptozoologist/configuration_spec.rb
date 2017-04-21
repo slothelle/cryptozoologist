@@ -84,7 +84,7 @@ describe Cryptozoologist::Configuration do
 
   context '#delimiter' do
     it 'defaults to "-"' do
-      expect(Cryptozoologist.generate.match('-')).to be_instance_of(MatchData)
+      expect(Cryptozoologist.random.match('-')).to be_instance_of(MatchData)
     end
 
     it 'requires a string' do
@@ -100,7 +100,7 @@ describe Cryptozoologist::Configuration do
         config.delimiter ='$'
       end
 
-      expect(Cryptozoologist.generate.match('$')).to be_instance_of(MatchData)
+      expect(Cryptozoologist.random.match('$')).to be_instance_of(MatchData)
     end
   end
 
