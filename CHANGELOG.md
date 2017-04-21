@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.0
+
+**New features!**
+
+- now with lorem ipsum generation! 
+
+**API Changes**
+
+- configuration is now  _reset_ if you call the `configure` block again after having already called it
+
+**Bug fixes**
+
+- fix a bug where if you included `[:quantity]` words, you would get an extra quantity word for each time you called `generate` (lol this was very amusing)
+
+---
+
 ## 2.1.0
 
 - added test coverage
