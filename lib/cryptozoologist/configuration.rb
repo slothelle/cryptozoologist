@@ -35,6 +35,7 @@ module Cryptozoologist
       raise Errors::Configuration, "Exclusions must be an array" unless exclusions.is_a?(Array)
 
       @exclude = exclusions.select { |e| valid_exclusions.include?(e) }
+      @order.reject! { |dict| @exclude.include?(dict) }
     end
 
     def include_quantity?
