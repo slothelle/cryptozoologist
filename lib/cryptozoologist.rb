@@ -27,7 +27,7 @@ module Cryptozoologist
     yield(configuration)
   end
 
-  def self.lorem(sentence_count)
+  def self.lorem(sentence_count=1)
     Generator.lorem(sentence_count)
   end
 

@@ -1,6 +1,23 @@
 require 'spec_helper'
 
 describe Cryptozoologist do
+  context '#lorem' do
+    it 'returns a string' do
+      expect(Cryptozoologist.lorem(1)).to be_instance_of(String)
+    end
+
+    it 'defaults to one sentence if an argument is not provided' do
+      expect(Cryptozoologist.lorem).to be_instance_of(String)
+      expect(Cryptozoologist::Dictionary.punctuation.include?(Cryptozoologist.lorem[-1])).to be true
+    end
+
+    it 'generates the number of sentences requested' do
+      sentence = Cryptozoologist.lorem(3)
+      punctuation = sentence.gsub!(/\w/, "").gsub!(" ", "")
+      expect(punctuation.length).to eq(3)
+    end
+  end
+
   context '#random' do
     it 'returns a string' do
       expect(Cryptozoologist.random).to be_instance_of(String)

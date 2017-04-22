@@ -5,7 +5,7 @@ module Cryptozoologist
     # Generates sentence_count sentences, ranging in length from 10-16 words,
     # using the dictionaries from your config.
     # 
-    def lorem(sentence_count=1)
+    def lorem(sentence_count)
       sentences = []
       order = Cryptozoologist.configuration.order
       sentence_count.times do
