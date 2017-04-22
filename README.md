@@ -24,9 +24,11 @@ Or install it yourself as:
 
 Cryptozoologist provides two main functions:
 
-* `Cryptozoologist.random`: returns a string separated by `-` (or other custom delimiter, uses the dictionaries per your configuration) (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
-* `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences (using the dictionaries per your configuration), separated by punctuation randomly selected from `["!", ".", "?"]`
-* `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries 
+* `Cryptozoologist.random`: returns a string separated by a delimiter (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
+* `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
+* `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
+
+Each method will respect your configuration settings where applicable.
 
 See below for more detailed usage on each method.
 
@@ -42,10 +44,11 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.quantity`
 * `Cryptozoologist::Dictionary.filler` ("a", "the", etc)
 * `Cryptozoologist::Dictionary.punctuation`
+* `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
 
 ### `Cryptozoologist.random`
 
-The `Cryptozoologist.random` method will return a string separated by `-` containing: a color, an animal, and an item of clothing.
+The `Cryptozoologist.random` method will return a string separated by `-` (or your custom delimiter) containing: a color, an animal, and an item of clothing.
 
 Example:
 
@@ -61,9 +64,11 @@ Cryptozoologist.random # => 'tomato-cerberus-sweatshirt'
 Cryptozoologist.random # => 'forest-green-wasp-getup'
 ```
 
+If your config includes the `Quantity` dictionary, it will be prepended to your string.
+
 ### `Cryptozoologist.lorem(sentence_count)`
 
-`Cryptozoologist.lorem(sentence_count)` will return a string consisting of the number of sentences you request.
+`Cryptozoologist.lorem(sentence_count)` will return a string consisting of the number of sentences you request. It will use every dictionary available based on your config.
 
 Example:
 
@@ -75,7 +80,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue
@@ -83,6 +88,8 @@ Cryptozoologist.street_address # => 947 Valkyrie Way
 Cryptozoologist.street_address # => 2415 Goblin Street
 Cryptozoologist.street_address # => 2558 Sea Dragon Court
 ```
+
+This only uses the `Animal` dictionaries and will *ignore your configuration to exclude subdictionaries*.
 
 ## Configuration 
 
