@@ -6,7 +6,8 @@
 
 **New features!**
 
-- now with lorem ipsum generation! 
+- now with lorem ipsum generation! `Cryptozoologist.lorem(sentence_count)`
+- added a street address method - you too can live at 1290 Sloth Circle! `Cryptozoologist.street_address`
 
 **API Changes**
 
