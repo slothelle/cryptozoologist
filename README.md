@@ -106,7 +106,7 @@ Configuration blocks take the following options:
 
 - `exclude` (array of symbols) allows you to exclude dictionary subtypes; defaults to no exclusions
 - `include` (array of symbols) allows you to include optional dictionaries; defaults to no inclusions
-- `order` (array of symbols) allows you to change the word order; defaults to animal-color-clothing
+- `order` (array of symbols) allows you to change the word order; defaults to `animal-color-clothing`
 - `delimiter` (string) allows you to specify a delimiter; defaults to `-`
 
 ### Configuration options
@@ -114,9 +114,11 @@ Configuration blocks take the following options:
 **Include (`config.include`, `[]`):**
 
 - if you include quantity, it will be added to the front of your generated string
-- `:quantity`
+- options: `:quantity`
 
 **Exclude (`config.exclude`, `[]`):**
+
+4 options are available for this, but you can only use 2 at a time (one from each category):
 
 - animals (1 of 2 allowed):
   - `:common`, `:mythical`
@@ -137,14 +139,14 @@ Configuration blocks take the following options:
 
 ```ruby
   Cryptozoologist.configure do |config|
-    config.exclude = [:common]
+    config.exclude = [:common, :paint]
     config.include = [:quantity]
     config.order = [:colors, :animals, :clothing]
     config.delimiter = '_'
   end
 
   Cryptozoologist.random # => 'masses_yellow_zombie_shrug'
-  Cryptozoologist.random # => 'gazillions_polar_drift_goblin_umbrella'
+  Cryptozoologist.random # => 'gazillions_purple_goblin_umbrella'
   Cryptozoologist.random # => 'wide_orange_cynocephalus_helmet'
   Cryptozoologist.random # => 'some_light_pink_moke_fedora'
 ```
