@@ -51,9 +51,9 @@ module Cryptozoologist
     # 
     def street_address
       number = rand(1..9000)
-      street = Cryptozoologist::Dictionary.animals.sample
+      street = Dictionary.animals.sample
       street = street.split(" ").map! {|word| word.capitalize! }.join(" ")
-      "#{number} #{street} #{Cryptozoologist::Dictionary.addresses.sample}"
+      "#{number} #{street} #{Dictionary.addresses.sample}"
     end
   end
 end
