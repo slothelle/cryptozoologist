@@ -24,8 +24,8 @@ Or install it yourself as:
 
 Cryptozoologist provides two main functions:
 
-* `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences (using the dictionaries per your configuration), separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.random`: returns a string separated by `-` (or other custom delimiter, uses the dictionaries per your configuration) (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
+* `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences (using the dictionaries per your configuration), separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries 
 
 See below for more detailed usage on each method.
@@ -71,6 +71,17 @@ Example:
 Cryptozoologist.lorem(3) # => 'Black rhinoceros and it hundreds at flamingo dream oodles acres gear it plum serval shrug phoenix blazer washed khaki! Phantom mist the gazillions hem alicorn light golden rod yellow leopard cat troop and galoshes a be. Are there stellers sea cow billions be plum indri dodger blue shift to t shirt cheetah tiara tons sky blue miles?'
 
 Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff chocolate wide tights yak bundles the be?'
+```
+
+### `Cryptozoologist.street_address`
+
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
+
+```ruby
+Cryptozoologist.street_address # => 2295 Red Panda Avenue
+Cryptozoologist.street_address # => 947 Valkyrie Way
+Cryptozoologist.street_address # => 2415 Goblin Street
+Cryptozoologist.street_address # => 2558 Sea Dragon Court
 ```
 
 ## Configuration 
