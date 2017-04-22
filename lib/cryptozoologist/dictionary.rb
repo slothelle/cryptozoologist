@@ -25,5 +25,9 @@ module Cryptozoologist
     def punctuation
       Dictionaries.punctuation
     end
+
+    def addresses
+      Dictionaries.addresses
+    end
   end
 end

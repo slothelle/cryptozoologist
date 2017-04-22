@@ -39,6 +39,10 @@ module Cryptozoologist
       Punctuation.list
     end
 
+    def addresses
+      Addresses.list
+    end
+
     private
     def create_list(key)
       list = []

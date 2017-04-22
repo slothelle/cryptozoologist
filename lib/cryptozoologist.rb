@@ -39,6 +39,10 @@ module Cryptozoologist
     Generator.random
   end
 
+  def self.street_address
+    Generator.street_address
+  end
+
   protected 
   def self.subdictionaries
     Dictionaries.library

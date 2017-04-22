@@ -50,4 +50,27 @@ describe Cryptozoologist do
       end
     end
   end
+
+  context '#street_address' do
+    before do
+      @street = Cryptozoologist.street_address.split(" ")
+    end
+
+    it 'includes a number' do
+      expect(@street.first.to_i).to be > 0
+      expect(@street.first.to_i).to be < 9001
+    end
+
+    it 'includes an animal' do
+      street = @street
+      street.pop
+      street.shift
+      street = street.join(" ").downcase
+      expect(Cryptozoologist::Dictionary.animals.include?(street)).to be true
+    end
+
+    it 'includes an address label' do
+      expect(Cryptozoologist::Dictionary.addresses.include?(@street.last)).to be true
+    end
+  end
 end
