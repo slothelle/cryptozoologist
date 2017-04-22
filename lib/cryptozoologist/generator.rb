@@ -46,6 +46,9 @@ module Cryptozoologist
       string
     end
 
+    # Generates a string for a street address with a number and street. Only
+    # uses animal dictionaries and does not respect config exclusions.
+    # 
     def street_address
       number = rand(1..9000)
       street = Cryptozoologist::Dictionary.animals.sample
