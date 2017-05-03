@@ -12,6 +12,24 @@ describe Cryptozoologist::Configuration do
     end
   end
 
+  context 'configuration collision' do
+    it 'does not happen' do
+      Cryptozoologist.configure do |config|
+        config.delimiter = "_"
+      end
+
+      expect(Cryptozoologist.configuration.delimiter).to eq("_")
+      expect(Cryptozoologist.configuration.include_quantity?).to be false
+
+      Cryptozoologist.configure do |config|
+        config.include = [:quantity]
+      end      
+
+      expect(Cryptozoologist.configuration.delimiter).to_not eq("_")
+      expect(Cryptozoologist.configuration.include_quantity?).to be true
+    end
+  end
+
   context 'exclusions' do
     it 'filters out invalid exclusions' do
       Cryptozoologist.configure do |config|
@@ -66,7 +84,7 @@ describe Cryptozoologist::Configuration do
 
   context '#delimiter' do
     it 'defaults to "-"' do
-      expect(Cryptozoologist.generate.match('-')).to be_instance_of(MatchData)
+      expect(Cryptozoologist.random.match('-')).to be_instance_of(MatchData)
     end
 
     it 'requires a string' do
@@ -82,7 +100,7 @@ describe Cryptozoologist::Configuration do
         config.delimiter ='$'
       end
 
-      expect(Cryptozoologist.generate.match('$')).to be_instance_of(MatchData)
+      expect(Cryptozoologist.random.match('$')).to be_instance_of(MatchData)
     end
   end
 

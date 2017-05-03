@@ -7,6 +7,7 @@ Dir[dictionaries].each { |file| require file }
 
 require "cryptozoologist/dictionary"
 require "cryptozoologist/dictionaries"
+require "cryptozoologist/generator"
 
 module Cryptozoologist
   class << self
@@ -22,26 +23,24 @@ module Cryptozoologist
   end
 
   def self.configure
+    self.reset
     yield(configuration)
   end
 
+  def self.lorem(sentence_count=1)
+    Generator.lorem(sentence_count)
+  end
+
+  def self.random
+    Generator.random
+  end
+
   def self.generate
-    string = ""
-    order = @configuration.order
+    Generator.random
+  end
 
-    order.unshift(:quantity) if @configuration.include_quantity?
-
-    order.each do |library|
-      word = Dictionary.send(library).sample
-      compound_word = word.split(' ').join(@configuration.delimiter)
-      string += "#{compound_word}"
-
-      unless library == @configuration.order.last
-        string += "#{@configuration.delimiter}" 
-      end
-    end
-
-    string
+  def self.street_address
+    Generator.street_address
   end
 
   protected 

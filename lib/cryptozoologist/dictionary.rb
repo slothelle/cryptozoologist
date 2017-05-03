@@ -17,5 +17,17 @@ module Cryptozoologist
     def quantity
       Dictionaries.quantity
     end
+
+    def filler
+      Dictionaries.filler
+    end
+
+    def punctuation
+      Dictionaries.punctuation
+    end
+
+    def addresses
+      Dictionaries.addresses
+    end
   end
 end

@@ -14,7 +14,6 @@ module Cryptozoologist
       raise Errors::Configuration, "Order must contain 3 items" unless list.length == 3
       invalid_keys = list.select { |e| !valid_order.include?(e) }
       raise Errors::Configuration, "Invalid order setting provided: #{invalid_keys}" unless invalid_keys.empty?
-
       @order = list
     end
 
@@ -28,6 +27,8 @@ module Cryptozoologist
       raise Errors::Configuration, "Inclusions must be an array" unless inclusions.is_a?(Array)
 
       @include = inclusions.select { |e| valid_inclusions.include?(e) }
+      inclusions += @order
+      @order = inclusions
     end
 
     def exclude=(exclusions)
