@@ -29,5 +29,9 @@ module Cryptozoologist
     def addresses
       Dictionaries.addresses
     end
+
+    def states
+      Dictionaries.states
+    end
   end
 end

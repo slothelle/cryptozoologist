@@ -43,6 +43,10 @@ module Cryptozoologist
       Addresses.list
     end
 
+    def states
+      States.list
+    end
+
     private
     def create_list(key)
       list = []
