@@ -1,6 +1,6 @@
 # Cryptozoologist [![Build Status](https://travis-ci.org/feministy/cryptozoologist.svg?branch=master)](https://travis-ci.org/feministy/cryptozoologist)
 
-Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences. 
+Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences.
 
 You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not? The gem can be configured to use a custom delimiter, exclude dictionaries, or add in speciality dictionaries.
 
@@ -22,11 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-Cryptozoologist provides two main functions:
+Cryptozoologist provides four main functions:
 
 * `Cryptozoologist.random`: returns a string separated by a delimiter (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
+
+* `Cryptozoologist.state`: returns a string of a state name combined with a random word from other internal dictionaries.
+(_Note_: ignores dictionary exclusions) 
 
 Each method will respect your configuration settings where applicable.
 
@@ -45,6 +48,7 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.filler` ("a", "the", etc)
 * `Cryptozoologist::Dictionary.punctuation`
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
+* `Cryptozoologist::Dictionary.states`
 
 ### `Cryptozoologist.random`
 
@@ -80,7 +84,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue
@@ -91,7 +95,21 @@ Cryptozoologist.street_address # => 2558 Sea Dragon Court
 
 This only uses the `Animal` dictionaries and will *ignore your configuration to exclude subdictionaries*.
 
-## Configuration 
+### `Cryptozoologist.state`
+
+One of the 50 United States is randomly selected, and a fun new name is created from it! If the state name is two words, one of the words
+will be completely replaced. If the state name is one word, then a word from another library will be interspersed into the original state name.
+All replacement strings from the non-state dictionaries are alliterative, so the new, fun state name flows right off of the tongue.
+
+```ruby
+Cryptozoologist.state # => "Newt Hampshire"
+Cryptozoologist.state # => "Missingletissippi"
+Cryptozoologist.state # => "Californiguana"
+```
+
+This uses `Animal`, `Color`, and `Clothing` libraries and ignores exclusions.
+
+## Configuration
 
 Configuration blocks take the following options:
 

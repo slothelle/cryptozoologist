@@ -6,7 +6,7 @@ module Cryptozoologist
           "Alabama",
           "Alaska",
           "Arizona",
-          "Arkansa",
+          "Arkansas",
           "California",
           "Colorado",
           "Connecticut",

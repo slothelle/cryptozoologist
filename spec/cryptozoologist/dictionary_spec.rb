@@ -5,7 +5,7 @@ describe Cryptozoologist::Dictionary do
     @dictionary = Cryptozoologist::Dictionary
   end
 
-  lists = [:animals, :colors, :clothing, :quantity]
+  lists = [:animals, :colors, :clothing, :quantity, :states]
 
   context 'word lists' do
     lists.each do |list|

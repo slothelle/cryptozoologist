@@ -14,9 +14,10 @@ describe Cryptozoologist::Dictionaries do
     }
   }
 
-  dictionaries = { 
+  dictionaries = {
     "clothing": Cryptozoologist::Dictionaries::Clothing,
-    "quantity": Cryptozoologist::Dictionaries::Quantity
+    "quantity": Cryptozoologist::Dictionaries::Quantity,
+    "state": Cryptozoologist::Dictionaries::States
   }
 
   context '#libraries' do
@@ -28,6 +29,11 @@ describe Cryptozoologist::Dictionaries do
     it 'contains colors' do
       keys = Cryptozoologist::Dictionaries.library[:colors].keys
       expect(keys.length).to eq(2)
+    end
+
+    it 'contains states' do
+      states = Cryptozoologist::Dictionaries.states
+      expect(states.length).to eq(50)
     end
   end
 

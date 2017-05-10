@@ -73,4 +73,14 @@ describe Cryptozoologist do
       expect(Cryptozoologist::Dictionary.addresses.include?(@street.last)).to be true
     end
   end
+
+  context '#state' do
+    before do
+      @state = Cryptozoologist.state
+    end
+
+    it 'returns a string' do
+      expect(@state).to be_instance_of(String)
+    end
+  end
 end
