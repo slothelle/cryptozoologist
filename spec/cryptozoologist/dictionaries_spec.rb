@@ -17,7 +17,7 @@ describe Cryptozoologist::Dictionaries do
   dictionaries = {
     "clothing": Cryptozoologist::Dictionaries::Clothing,
     "quantity": Cryptozoologist::Dictionaries::Quantity,
-    "state": Cryptozoologist::Dictionaries::States
+    "states": Cryptozoologist::Dictionaries::States
   }
 
   context '#libraries' do
