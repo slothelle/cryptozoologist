@@ -27,9 +27,7 @@ Cryptozoologist provides four main functions:
 * `Cryptozoologist.random`: returns a string separated by a delimiter (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
-
-* `Cryptozoologist.state`: returns a string of a state name combined with a random word from other internal dictionaries.
-(_Note_: ignores dictionary exclusions) 
+* `Cryptozoologist.state`: returns a string of a state name combined with a random word from other internal dictionaries (_Note_: ignores dictionary exclusions) 
 
 Each method will respect your configuration settings where applicable.
 
