@@ -65,12 +65,11 @@ module Cryptozoologist
       has_two_words = state_name.index(" ")
 
       if has_two_words
-        final_word = handle_two_word(state_name, libraries)
+        handle_two_word(state_name, libraries)
       else
-        final_word = handle_one_word(state_name, libraries)
+        handle_one_word(state_name, libraries)
       end
 
-      final_word
     end
 
     private
@@ -90,7 +89,7 @@ module Cryptozoologist
 
       #if the randomly selected word from libraries has more letters than the substring from key_letter_index to state_name.length
       #completely replace that substring
-      if insert_word.length > state_name.length - key_letter_index && key_letter_index > 0
+      if insert_word.length > (state_name.length - key_letter_index) && key_letter_index > 0
         final_word = state_name.slice(0...key_letter_index) + insert_word
       #otherwise, replace only the key_letter with the entire random word from libraries
       else
