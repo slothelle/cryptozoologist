@@ -80,7 +80,6 @@ describe Cryptozoologist do
     end
 
     it 'should return a string' do
-      puts @city
       expect(@city).to be_instance_of(String)
     end
 
