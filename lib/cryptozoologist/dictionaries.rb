@@ -43,6 +43,14 @@ module Cryptozoologist
       Addresses.list
     end
 
+    def cities_words
+      Cities::Words.list
+    end
+
+    def cities_terminologies
+      Cities::Terminologies.list
+    end
+
     private
     def create_list(key)
       list = []

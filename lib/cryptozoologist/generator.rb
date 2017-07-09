@@ -48,12 +48,25 @@ module Cryptozoologist
 
     # Generates a string for a street address with a number and street. Only
     # uses animal dictionaries and does not respect config exclusions.
-    # 
+    #
     def street_address
       number = rand(1..9000)
       street = Dictionary.animals.sample
       street = street.split(" ").map! {|word| word.capitalize! }.join(" ")
       "#{number} #{street} #{Dictionary.addresses.sample}"
+    end
+
+    def city
+      cities_words_formatted = Dictionary.cities_words.map { |word| " #{word.capitalize}" }
+      city_labels =  cities_words_formatted + Dictionary.cities_terminologies
+
+      "#{one_word_animals.sample.capitalize}#{city_labels.sample}"
+    end
+
+    private
+
+    def one_word_animals
+      Dictionary.animals.select {|animal| animal.split(' ').count == 1}
     end
   end
 end
