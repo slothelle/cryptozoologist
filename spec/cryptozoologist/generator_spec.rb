@@ -92,18 +92,12 @@ describe Cryptozoologist do
       expect(has_animal).to be true
     end
 
-    it 'should include a city label or terminology' do
-      has_city_word = false
-      Cryptozoologist::Dictionary.cities_words.each do |city|
-        has_city_word = @city.downcase.include?(city) if @city.downcase.include?(city)
+    it 'should include a city label' do
+      has_city = false
+      Cryptozoologist::Dictionary.cities.each do |city|
+        has_city = @city.downcase.include?(city) if @city.downcase.include?(city)
       end
 
-      has_city_terminology = false
-      Cryptozoologist::Dictionary.cities_terminologies.each do |city|
-        has_city_terminology = @city.downcase.include?(city) if @city.downcase.include?(city)
-      end
-
-      has_city = has_city_word || has_city_terminology
       expect(has_city).to be true
     end
   end

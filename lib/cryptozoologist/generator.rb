@@ -57,9 +57,14 @@ module Cryptozoologist
     end
 
     def city
-      cities_words_formatted = Dictionary.cities_words.map { |word| " #{word.capitalize}" }
-      city_labels =  cities_words_formatted + Dictionary.cities_terminologies
+      exclude = Cryptozoologist.configuration.exclude
+      words_formatted = exclude.include?(:words) ? [] : cities_words.map { |word| " #{word.capitalize}" }
+      terminologies = exclude.include?(:terminologies) ? [] : cities_terminologies
+      city_labels =  words_formatted + terminologies
 
+      Cryptozoologist.configure do |config|
+        config.exclude = exclude
+      end
       "#{one_word_animals.sample.capitalize}#{city_labels.sample}"
     end
 
@@ -67,6 +72,22 @@ module Cryptozoologist
 
     def one_word_animals
       Dictionary.animals.select {|animal| animal.split(' ').count == 1}
+    end
+
+    def cities_words
+      Cryptozoologist.configure do |config|
+        config.exclude = [:terminologies]
+      end
+
+      Dictionary.cities
+    end
+
+    def cities_terminologies
+      Cryptozoologist.configure do |config|
+        config.exclude = [:words]
+      end
+
+      Dictionary.cities
     end
   end
 end

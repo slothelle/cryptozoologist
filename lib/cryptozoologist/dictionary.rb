@@ -30,12 +30,8 @@ module Cryptozoologist
       Dictionaries.addresses
     end
 
-    def cities_words
-      Dictionaries.cities_words
-    end
-
-    def cities_terminologies
-      Dictionaries.cities_terminologies
+    def cities
+      Dictionaries.cities
     end
   end
 end
