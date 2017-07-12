@@ -46,8 +46,7 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.filler` ("a", "the", etc)
 * `Cryptozoologist::Dictionary.punctuation`
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
-* `Cryptozoologist::Dictionary.cities_words`
-* `Cryptozoologist::Dictionary.cities_terminologies`
+* `Cryptozoologist::Dictionary.cities`
 
 ### `Cryptozoologist.random`
 
