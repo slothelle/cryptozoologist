@@ -13,7 +13,7 @@ describe Cryptozoologist do
 
     it 'generates the number of sentences requested' do
       sentence = Cryptozoologist.lorem(3)
-      punctuation = sentence.gsub!(/\w/, "").gsub!(" ", "")
+      punctuation = sentence.scan(/[.|?|!]/)
       expect(punctuation.length).to eq(3)
     end
   end
