@@ -59,15 +59,19 @@ module Cryptozoologist
     # Generates a string for a U.S. state name which is partially replaced by
     # alliterative words from other dictionaries (e.g. "Oregon" can become "Oregoose" or "Orabbit")
     # Does not respect config exclusions
-    def state
-      libraries = [:animals, :clothing, :colors]
-      state_name = Dictionary.states.sample
+    # Note: optional arguments desired_library is an String containing the single replacement word of your choice
+    # desired_state is a String of the specific state name of your choice
+    #{}`desired_replace_index` is an integer that allows you to specify whether the first
+    #or second word will be replaced, or in the case of a one-word state - which letter is replaced
+    def state(desired_state, desired_library, desired_replace_index)
+      libraries = desired_library || [:animals, :clothing, :colors]
+      state_name = desired_state || Dictionary.states.sample
       has_two_words = state_name.index(" ")
 
       if has_two_words
-        handle_two_word(state_name, libraries)
+        handle_two_word(state_name, libraries, desired_replace_index)
       else
-        handle_one_word(state_name, libraries)
+        handle_one_word(state_name, libraries, desired_replace_index)
       end
 
     end
@@ -75,16 +79,16 @@ module Cryptozoologist
     private
 
     #completely replaces one random word from the state with an alliterative word from libraries
-    def handle_two_word(state_name, libraries)
+    def handle_two_word(state_name, libraries, desired_replace_index)
       base_state_words = state_name.split(" ")
-      replace_index = rand(0..1)
+      replace_index = desired_replace_index || rand(0..1)
       base_state_words[replace_index] = get_alliteration(libraries, base_state_words[replace_index][0]).capitalize
       return base_state_words.join(" ")
     end
 
     #selects a random key_letter from state_name, and finds an alliterative word from libraries for replacement
-    def handle_one_word(state_name, libraries)
-      key_letter_index = rand(0...state_name.length-1)
+    def handle_one_word(state_name, libraries, desired_replace_index)
+      key_letter_index = desired_replace_index || rand(0...state_name.length-1)
       insert_word = get_alliteration(libraries, state_name[key_letter_index]).downcase
 
       #if the randomly selected word from libraries has more letters than the substring from key_letter_index to state_name.length
@@ -102,6 +106,7 @@ module Cryptozoologist
 
     #finds a word from libraries that begins with key_letter
     def get_alliteration(libraries, key_letter)
+      return libraries if libraries.is_a? String #this is the case for testing
       replacement_options = Dictionary.send(libraries.sample).select { |word| word[0] == key_letter || word[0] == key_letter.downcase }
 
       #default to :animals library if the randomly-selected library has no words that begin with key_letter

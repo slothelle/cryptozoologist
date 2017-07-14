@@ -43,8 +43,8 @@ module Cryptozoologist
     Generator.street_address
   end
 
-  def self.state
-    Generator.state
+  def self.state(desired_state=nil, desired_library=nil, desired_replace_index=nil)
+    Generator.state(desired_state, desired_library, desired_replace_index)
   end
 
   protected
