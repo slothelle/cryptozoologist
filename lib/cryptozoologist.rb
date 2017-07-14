@@ -43,7 +43,11 @@ module Cryptozoologist
     Generator.street_address
   end
 
-  protected 
+  def self.city
+    Generator.city
+  end
+
+  protected
   def self.subdictionaries
     Dictionaries.library
   end

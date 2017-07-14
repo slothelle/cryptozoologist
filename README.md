@@ -22,11 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-Cryptozoologist provides two main functions:
+Cryptozoologist provides four main functions:
 
 * `Cryptozoologist.random`: returns a string separated by a delimiter (_Note_: aliased as `Cryptozoologist.generate` for backwards compatibility with anything below version 3)
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
+* `Cryptozoologist.city`: returns a string representing a city that uses the animal dictionaries
 
 Each method will respect your configuration settings where applicable.
 
@@ -45,6 +46,7 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.filler` ("a", "the", etc)
 * `Cryptozoologist::Dictionary.punctuation`
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
+* `Cryptozoologist::Dictionary.cities`
 
 ### `Cryptozoologist.random`
 
@@ -91,7 +93,20 @@ Cryptozoologist.street_address # => 2558 Sea Dragon Court
 
 This only uses the `Animal` dictionaries and will *ignore your configuration to exclude subdictionaries*.
 
-## Configuration 
+### `Cryptozoologist.city`
+
+The `Cryptozoologist.city` method will return a string containing an animal city.
+
+Example:
+
+```ruby
+Cryptozoologist.city # => Goat Tower
+Cryptozoologist.city # => Raccoon City
+Cryptozoologist.city # => Mandrill Hills
+Cryptozoologist.city # => Lionville
+```
+
+## Configuration
 
 Configuration blocks take the following options:
 

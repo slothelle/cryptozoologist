@@ -27,6 +27,10 @@ module Cryptozoologist
         colors: {
           paint: Colors::Paint,
           web: Colors::WebSafe
+        },
+        cities: {
+          words: Cities::Words,
+          terminologies: Cities::Terminologies
         }
       }
     end
@@ -41,6 +45,10 @@ module Cryptozoologist
 
     def addresses
       Addresses.list
+    end
+
+    def cities
+      create_list(:cities)
     end
 
     private
