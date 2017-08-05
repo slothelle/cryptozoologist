@@ -28,7 +28,11 @@ describe Cryptozoologist do
     end
 
     describe('with quantity') do
+      let(:test_quantity_library) { ["quantity"] }
+
       before do
+        allow(Cryptozoologist::Dictionary).to receive(:send).and_call_original
+        allow(Cryptozoologist::Dictionary).to receive(:send).with(:quantity).and_return(test_quantity_library)
         Cryptozoologist.configure do |config|
           config.include = [:quantity]
           config.delimiter = "_"
@@ -41,7 +45,6 @@ describe Cryptozoologist do
       end
 
       it 'only has one word from the quantity list' do
-        Cryptozoologist.random
         random = Cryptozoologist.random.split("_")
         matches = Cryptozoologist::Dictionaries::Quantity.list.select do |word|
           random.include?(word)
