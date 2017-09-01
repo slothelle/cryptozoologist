@@ -76,4 +76,32 @@ describe Cryptozoologist do
       expect(Cryptozoologist::Dictionary.addresses.include?(@street.last)).to be true
     end
   end
+
+  context '#city' do
+    before do
+      @city = Cryptozoologist.city
+    end
+
+    it 'should return a string' do
+      expect(@city).to be_instance_of(String)
+    end
+
+    it 'should include an animal' do
+      has_animal = false
+      Cryptozoologist::Dictionary.animals.each do |animal|
+        has_animal = @city.downcase.include?(animal) if @city.downcase.include?(animal)
+      end
+
+      expect(has_animal).to be true
+    end
+
+    it 'should include a city label' do
+      has_city = false
+      Cryptozoologist::Dictionary.cities.each do |city|
+        has_city = @city.downcase.include?(city) if @city.downcase.include?(city)
+      end
+
+      expect(has_city).to be true
+    end
+  end
 end

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+- added a city method - generate an animal city with `Cryptozoologist.city`!
+
 ## 3.0.0
 
 **Important!!** Now requires Ruby 2.3.0 or higher (as of writing, Ruby 2.2 is in security maintenance mode, while 2.3 is in normal maintanance mode).
