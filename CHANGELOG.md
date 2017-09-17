@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.0 
+
+- added a name method - generate an user animal name for users.
+`Cryptozoologist.name`!
+
 ## 3.1.0
 
 - added a city method - generate an animal city with `Cryptozoologist.city`!
