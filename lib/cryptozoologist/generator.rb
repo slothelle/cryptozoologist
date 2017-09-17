@@ -39,7 +39,7 @@ module Cryptozoologist
         string += "#{compound_word}"
 
         unless library == Cryptozoologist.configuration.order.last
-          string += "#{Cryptozoologist.configuration.delimiter}" 
+          string += "#{Cryptozoologist.configuration.delimiter}"
         end
       end
 

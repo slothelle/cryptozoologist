@@ -83,7 +83,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue
