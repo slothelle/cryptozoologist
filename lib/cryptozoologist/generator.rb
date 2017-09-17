@@ -68,13 +68,9 @@ module Cryptozoologist
     end
 
     def name
-      "#{Cryptozoologist::Dictionaries::People::Name.list.sample} #{Cryptozoologist::Dictionaries::People::LastName.list.sample}#{titleize(Cryptozoologist::Dictionaries::Animals::Common.list.sample).split(" ").join("")}"
+      "#{Cryptozoologist::Dictionaries::People::FirstName.list.sample} #{Cryptozoologist::Dictionaries::People::LastName.list.sample}#{one_word_animals.sample.capitalize}"
     end
     
-    def titleize(string)
-      string.split(" ").map {|word| word.capitalize}.join(" ")
-    end
-
     private
 
     def one_word_animals

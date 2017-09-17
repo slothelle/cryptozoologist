@@ -107,22 +107,11 @@ describe Cryptozoologist do
 
   context '#name' do
     before do
-      @person = Cryptozoologist::Dictionaries::People::Name.list.sample
+      @person = Cryptozoologist::Dictionaries::People::FirstName.list.sample
     end
 
     it 'should return a string' do
       expect(@person).to be_instance_of(String)
-    end
-  end
-  
-  context '#titleize' do 
-    before do 
-      @string = "hello world"
-    end
-    
-    it 'should return a titelized string' do 
-      @string = Cryptozoologist::Generator.titleize(@string)
-      expect(@string).to eq 'Hello World'
     end
   end
 end
