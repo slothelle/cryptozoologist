@@ -49,7 +49,6 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
 * `Cryptozoologist::Dictionary.cities`
 
-
 ### `Cryptozoologist.random`
 
 The `Cryptozoologist.random` method will return a string separated by `-` (or your custom delimiter) containing: a color, an animal, and an item of clothing.
@@ -84,7 +83,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue
