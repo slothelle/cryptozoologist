@@ -976,7 +976,7 @@ module Cryptozoologist
               Writer /Author
               Zoo Veterinarian
               Zoologist
-            ".split("\n").sample.lstrip
+            "
         end
       end
     end
