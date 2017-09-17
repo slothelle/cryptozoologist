@@ -107,7 +107,7 @@ describe Cryptozoologist do
 
   context '#name' do
     before do
-      @person = Cryptozoologist.name
+      @person = Cryptozoologist::Dictionaries::People::Name.list.sample
     end
 
     it 'should return a string' do

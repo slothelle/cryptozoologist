@@ -28,7 +28,7 @@ Cryptozoologist provides four main functions:
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
 * `Cryptozoologist.city`: returns a string representing a city that uses the animal dictionaries
-* `Cryptozoologist::Dictionary.names(sex)` takes single argument `"male"` or `"female"` and returns a name corresponding to chosen sex
+* `Cryptozoologist::Dictionary.names`: returns a string representing a name that uses the People::Name.list dictionary combined with the People::Occupation.list
 
 Each method will respect your configuration settings where applicable.
 

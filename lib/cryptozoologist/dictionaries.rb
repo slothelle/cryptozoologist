@@ -52,7 +52,7 @@ module Cryptozoologist
     end
 
     def people
-      People.first_names
+      People::Name.list
     end
 
     private

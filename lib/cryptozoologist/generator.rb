@@ -39,7 +39,7 @@ module Cryptozoologist
         string += "#{compound_word}"
 
         unless library == Cryptozoologist.configuration.order.last
-          string += "#{Cryptozoologist.configuration.delimiter}"
+          string += "#{Cryptozoologist.configuration.delimiter}" 
         end
       end
 
@@ -68,7 +68,7 @@ module Cryptozoologist
     end
 
     def name
-      "#{Cryptozoologist::People.first_names} #{Cryptozoologist::People.occupations}"
+      "#{Cryptozoologist::Dictionaries::People::Name.list.sample} #{Cryptozoologist::Dictionaries::People::Occupation.list.split("\n").sample.lstrip}"
     end
 
     private
