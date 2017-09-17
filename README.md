@@ -1,6 +1,6 @@
 # Cryptozoologist [![Build Status](https://travis-ci.org/feministy/cryptozoologist.svg?branch=master)](https://travis-ci.org/feministy/cryptozoologist)
 
-Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences. 
+Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences.
 
 You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not? The gem can be configured to use a custom delimiter, exclude dictionaries, or add in speciality dictionaries.
 
@@ -28,6 +28,7 @@ Cryptozoologist provides four main functions:
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
 * `Cryptozoologist.city`: returns a string representing a city that uses the animal dictionaries
+* `Cryptozoologist::Dictionary.names(sex)` takes single argument `"male"` or `"female"` and returns a name corresponding to chosen sex
 
 Each method will respect your configuration settings where applicable.
 
@@ -47,6 +48,7 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.punctuation`
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
 * `Cryptozoologist::Dictionary.cities`
+
 
 ### `Cryptozoologist.random`
 
@@ -82,7 +84,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue

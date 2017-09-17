@@ -47,6 +47,10 @@ module Cryptozoologist
     Generator.city
   end
 
+  def self.name
+    Generator.name
+  end
+
   protected
   def self.subdictionaries
     Dictionaries.library

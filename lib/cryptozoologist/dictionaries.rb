@@ -51,6 +51,9 @@ module Cryptozoologist
       create_list(:cities)
     end
 
+    def names
+    end
+
     private
     def create_list(key)
       list = []
