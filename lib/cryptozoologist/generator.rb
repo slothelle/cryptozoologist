@@ -68,7 +68,7 @@ module Cryptozoologist
     end
 
     def name
-      "#{Cryptozoologist::People.first_names.sample} #{Cryptozoologist::People.occupations.sample}"
+      "#{Cryptozoologist::People.first_names} #{Cryptozoologist::People.occupations}"
     end
 
     private
