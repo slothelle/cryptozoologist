@@ -4,7 +4,7 @@ module Cryptozoologist
 
     # Generates sentence_count sentences, ranging in length from 10-16 words,
     # using the dictionaries from your config.
-    #
+    # 
     def lorem(sentence_count)
       sentences = []
       order = Cryptozoologist.configuration.order
@@ -29,7 +29,7 @@ module Cryptozoologist
     end
 
     # Generates a string using the dictionaries and delimiter from your config.
-    #
+    # 
     def random
       string = ""
       order = Cryptozoologist.configuration.order
@@ -39,7 +39,7 @@ module Cryptozoologist
         string += "#{compound_word}"
 
         unless library == Cryptozoologist.configuration.order.last
-          string += "#{Cryptozoologist.configuration.delimiter}"
+          string += "#{Cryptozoologist.configuration.delimiter}" 
         end
       end
 

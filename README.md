@@ -1,6 +1,6 @@
 # Cryptozoologist [![Build Status](https://travis-ci.org/feministy/cryptozoologist.svg?branch=master)](https://travis-ci.org/feministy/cryptozoologist)
 
-Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences.
+Cryptozoologist generates random strings from animal, clothing item, and color pairings, as well as lorem ipsum style sentences. 
 
 You could get something like "orange-clownfish-turtleneck" or "magenta-three-toed-sloth-shoe-horn". It's fun and silly, because why not? The gem can be configured to use a custom delimiter, exclude dictionaries, or add in speciality dictionaries.
 
@@ -83,7 +83,7 @@ Cryptozoologist.lorem(1) # => 'And headscarf to potentially purple pygmy puff ch
 
 ### `Cryptozoologist.street_address`
 
-Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too. 
+Haven't you always wanted a cool address like 12 Pygmy Puff Court? Me, too.
 
 ```ruby
 Cryptozoologist.street_address # => 2295 Red Panda Avenue
