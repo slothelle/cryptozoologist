@@ -34,8 +34,8 @@ module Cryptozoologist
       Dictionaries.cities
     end
 
-    def names
-      Dictionaries.names
+    def people
+      Dictionaries.people
     end
   end
 end

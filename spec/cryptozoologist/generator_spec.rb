@@ -104,4 +104,14 @@ describe Cryptozoologist do
       expect(has_city).to be true
     end
   end
+
+  context '#name' do
+    before do
+      @person = Cryptozoologist.name
+    end
+
+    it 'should return a string' do
+      expect(@person).to be_instance_of(String)
+    end
+  end
 end

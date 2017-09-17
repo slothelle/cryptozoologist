@@ -51,7 +51,8 @@ module Cryptozoologist
       create_list(:cities)
     end
 
-    def names
+    def people
+      People.first_names
     end
 
     private

@@ -150,7 +150,7 @@ module Cryptozoologist
           Cement Mason
           Ceramic Engineer
           Certified Public Accountant (CPA)
-          Chaplain (Prison, Military, Hospital)
+          Chaplain
           Chemical Engineer
           Chemical Equipment Operator
           Chemical Plant Operator
@@ -962,7 +962,7 @@ module Cryptozoologist
           Weather Observer
           Web Art Director
           Weighers and Measurers
-          Welder (Gas, Arc, Plasma, Laser)
+          Welder
           Welfare Eligibility Workers and Interviewers
           Wholesale Buyers
           Wildlife Biologist
