@@ -31,6 +31,10 @@ module Cryptozoologist
         cities: {
           words: Cities::Words,
           terminologies: Cities::Terminologies
+        },
+        people: {
+          first_name: People::FirstName,
+          last_name: People::LastName,
         }
       }
     end
@@ -51,12 +55,8 @@ module Cryptozoologist
       create_list(:cities)
     end
 
-    def first_name
-      People::FirstName.list
-    end
-    
-    def last_name
-      People::LastName.list 
+    def name
+      create_list(:people)
     end
 
     private
