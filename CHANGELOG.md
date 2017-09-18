@@ -2,7 +2,7 @@
 
 ## 3.2.0 
 
-- added a name method - generate an user animal name for users.
+- added a name method - generates an user animal name.
 `Cryptozoologist.name`!
 
 ## 3.1.0

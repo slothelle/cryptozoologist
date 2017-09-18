@@ -49,7 +49,7 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
 * `Cryptozoologist::Dictionary.cities`
 * `Cryptozoologist::Dictionary.first_name`
-* `Cryptozoologist::Dictionary.last_name` (Used with animal dictionary to create a last name for users. For Example, "Wild", etc + Animal name will result in something like "Jesica WildLionfish")
+* `Cryptozoologist::Dictionary.last_name` (Adjective to describe Animals. Used with Animal dictionary to generate full names for Users. `Cryptozoologist.name`)
 
 ### `Cryptozoologist.random`
 
