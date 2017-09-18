@@ -28,7 +28,7 @@ Cryptozoologist provides four main functions:
 * `Cryptozoologist.lorem(sentence_count)`: returns `sentence_count` number of sentences, separated by punctuation randomly selected from `["!", ".", "?"]`
 * `Cryptozoologist.street_address`: returns a string formatted to US street address standards (house number and street name) using the animal dictionaries (_Note_: ignores animal subdictionary exclusions)
 * `Cryptozoologist.city`: returns a string representing a city that uses the animal dictionaries
-* `Cryptozoologist.name`: returns a string representing a name that uses the `People::FirstName.list` dictionary combined with the `People::LastName.list`
+* `Cryptozoologist.name`: returns a string representing a name. Samples come from the `People::FirstName.list` dictionary with the `People::LastName.list` to generate a full name where the last name includes an adjective & animal.
 
 Each method will respect your configuration settings where applicable.
 
@@ -48,8 +48,8 @@ The complete list of dictionaries includes:
 * `Cryptozoologist::Dictionary.punctuation`
 * `Cryptozoologist::Dictionary.addresses` ("Lane", "Street", etc - I don't know what this part of an address is called!)
 * `Cryptozoologist::Dictionary.cities`
-* `Cryptozoologist::Dictionary.first_name`
-* `Cryptozoologist::Dictionary.last_name` (Adjective to describe Animals. Used with Animal dictionary to generate full names for Users. `Cryptozoologist.name`)
+* `Cryptozoologist::Dictionary.first_name` (First name for users)
+* `Cryptozoologist::Dictionary.last_name` (Adjectives which combined with animals create a last name ie: Tiny + Vampire results in `TinyVampire`)
 
 ### `Cryptozoologist.random`
 

@@ -55,10 +55,13 @@ module Cryptozoologist
       create_list(:cities)
     end
 
-    def name
-      create_list(:people)
+    def first_name
+      People::FirstName.list
     end
-
+    
+    def last_name
+      People::LastName.list
+    end
     private
     def create_list(key)
       list = []
