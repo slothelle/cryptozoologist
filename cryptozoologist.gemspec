@@ -24,4 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.4"
   spec.add_development_dependency "pry", "~> 0.10.3"
   spec.add_development_dependency "pry-nav", "~> 0.2.4"
+
+  spec.add_development_dependency "rubocop", "0.49.1"
 end

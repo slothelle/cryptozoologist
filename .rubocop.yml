@@ -1,0 +1,25 @@
+# Built-in config:
+# https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+Documentation:
+  Enabled: false
+
+# We'll enforce one style eventually, but not yet
+StringLiterals:
+  Enabled: false
+
+# this is for ruby 3 upgrade happiness. Not yet.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Run rails specific checks
+# https://github.com/bbatsov/rubocop#rails
+Rails:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/FileName:
+  Exclude:
+    - Gemfile
