@@ -12,14 +12,14 @@ Let's get down to business!
 
 I use a [Project](https://github.com/feministy/cryptozoologist/projects/1) to organize all of the work for Cryptozoologist. You can look there to find things that are ready to work on, or things that I need help defining the work for.
 
-- **Ideas**: mostly a bunch of jumbled ideas that need more details before being considered as ready for work. If you see something in this list you'd like to see become a feature, or something you'd like to work on as a feature, open a new Issue using the [ISSUE_TEMPLATES/new_feature.md](new feature template).
+- **Ideas**: mostly a bunch of jumbled ideas that need more details before being considered as ready for work. If you see something in this list you'd like to see become a feature, or something you'd like to work on as a feature, open a new Issue using the [new feature template](ISSUE_TEMPLATES/new_feature.md).
 - **To do**: issues that are ready to be worked on! If one of these sounds interesting to you, comment on it and get started!
 - **In progress**: a combination of Issues and Pull Requests that are actively being worked on by someone.
 - **Done**: completed work! Merged to master, and, _ideally_, released with a version bump.
 
 ## Suggesting new features
 
-If you'd like to suggest a new feature, create a new issue using the [ISSUE_TEMPLATES/new_feature.md](new feature template).
+If you'd like to suggest a new feature, create a new issue using the [new feature template](ISSUE_TEMPLATES/new_feature.md).
 
 ## Adding new features
 
@@ -28,7 +28,7 @@ If you'd like to suggest a new feature, create a new issue using the [ISSUE_TEMP
 
 ## Reporting bugs
 
-Encountered a bug? Oh no! File a bug report using the [ISSUE_TEMPLATES/bug_report.md](bug report template).
+Encountered a bug? Oh no! File a bug report using the [bug report template](ISSUE_TEMPLATES/bug_report.md).
 
 ## Releasing
 
