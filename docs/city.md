@@ -1,4 +1,4 @@
-### `Cryptozoologist.city`
+# `Cryptozoologist.city`
 
 | It... | does this |
 | -- | -- |
