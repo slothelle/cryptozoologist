@@ -1,6 +1,6 @@
 ### `Cryptozoologist.city`
 
-| | |
+| It... | does this |
 | -- | -- |
 | Returns | String |
 | Respects config? | NO |
