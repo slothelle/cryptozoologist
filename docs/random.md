@@ -1,6 +1,7 @@
 # `Cryptozoologist.random`
 
-|----|----|
+| It... | does this |
+| -- | -- |
 | Returns | String |
 | Respects config? | Yes |
 | Arguments | none |

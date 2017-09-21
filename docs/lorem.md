@@ -1,6 +1,7 @@
 # `Cryptozoologist.lorem(sentence_count)`
 
-|----|----|
+| It... | does this |
+| -- | -- |
 | Returns | String |
 | Respects config? | Yes |
 | Arguments | 1 (optional), integer |

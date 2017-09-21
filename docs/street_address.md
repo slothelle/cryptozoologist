@@ -1,6 +1,7 @@
 # `Cryptozoologist.street_address`
 
-|----|----|
+| It... | does this |
+| -- | -- |
 | Returns | String |
 | Respects config? | NO |
 | Arguments | none |
