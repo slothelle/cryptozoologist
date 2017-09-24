@@ -58,9 +58,9 @@ module Cryptozoologist
       list.flatten
     end
 
-    def filter_library(key)
-      dictionaries = library[key].reject do |k, _v|
-        Cryptozoologist.configuration.exclude.include?(k)
+    def filter_library(filter_key)
+      dictionaries = library[filter_key].reject do |key, _value|
+        Cryptozoologist.configuration.exclude.include?(key)
       end
       dictionaries.values
     end
