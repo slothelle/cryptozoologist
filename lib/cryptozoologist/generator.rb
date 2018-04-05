@@ -86,10 +86,13 @@ module Cryptozoologist
       "#{one_word_animals.sample.capitalize}#{city_labels.sample}"
     end
 
-    def name
-      "#{Cryptozoologist::Dictionaries::People::FirstName.list.sample} #{Cryptozoologist::Dictionaries::People::LastName.list.sample}#{one_word_animals.sample.capitalize}"
+    def full_name
+      first_name = Cryptozoologist::Dictionaries::People::FirstName.list.sample
+      last_name = Cryptozoologist::Dictionaries::People::LastName.list.sample
+
+      "#{first_name} #{last_name}#{one_word_animals.sample.capitalize}"
     end
-    
+
     private
 
     #completely replaces one random word from the state with an alliterative word from libraries

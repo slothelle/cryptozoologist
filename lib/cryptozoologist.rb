@@ -51,8 +51,8 @@ module Cryptozoologist
     Generator.city
   end
 
-  def self.name
-    Generator.name
+  def self.full_name
+    Generator.full_name
   end
 
   protected
