@@ -7,6 +7,7 @@
 **New features!**
 
 - added a state method - create fun state names like "Californiguana" with `Cryptozoologist.state`
+- added a name method - generates an user animal name `Cryptozoologist.name`!
 
 ## 3.1.0
 

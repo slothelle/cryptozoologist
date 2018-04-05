@@ -37,5 +37,13 @@ module Cryptozoologist
     def cities
       Dictionaries.cities
     end
+
+    def first_name
+      Dictionaries.first_name
+    end
+    
+    def last_name 
+      Dictionaries.last_name
+    end
   end
 end

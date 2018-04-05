@@ -123,4 +123,30 @@ describe Cryptozoologist do
       expect(has_city).to be true
     end
   end
+
+  context '#full_name' do
+    before do
+      @person = Cryptozoologist.full_name
+    end
+
+    it 'should return datatype string' do
+      expect(@person).to be_instance_of(String)
+    end
+
+    it 'should contain an animal' do
+      has_animal = false
+      Cryptozoologist::Dictionary.animals.each do |animal|
+        has_animal = true if @person.downcase.include?(animal)
+      end
+      expect(has_animal).to be true
+    end
+
+    it 'should contain an adjective for the animal' do
+      has_adjective = false
+      Cryptozoologist::Dictionaries::People::LastName.list.each do |adjective|
+        has_adjective = true if @person.include?(adjective)
+      end
+      expect(has_adjective).to be true
+    end
+  end
 end

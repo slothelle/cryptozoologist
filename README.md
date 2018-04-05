@@ -26,13 +26,14 @@ In addition to the brief overview provided here, you can read more about each me
 
 ## Usage
 
-Cryptozoologist provides four main functions:
+Cryptozoologist provides some fun stuff:
 
 * [`Cryptozoologist.random`](docs/random.md): returns a string separated by a delimiter
 * [`Cryptozoologist.lorem(sentence_count)`](docs/lorem.md): returns `sentence_count` number of sentences
 * [`Cryptozoologist.street_address`](docs/street_address.md): returns a string formatted to US street address standards
 * [`Cryptozoologist.city`](docs/city.md): returns a string representing a city
 * [`Cryptozoologist.state`](docs/state.md): returns a string representing a state
+* [`Cryptozoologist.full_name`](docs/full_name.md): returns a full name
 
 ## Custom configuration
 
