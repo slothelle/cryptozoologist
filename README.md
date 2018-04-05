@@ -33,6 +33,7 @@ Cryptozoologist provides some fun stuff:
 * [`Cryptozoologist.street_address`](docs/street_address.md): returns a string formatted to US street address standards
 * [`Cryptozoologist.city`](docs/city.md): returns a string representing a city
 * [`Cryptozoologist.state`](docs/state.md): returns a string representing a state
+* [`Cryptozoologist.full_name`](docs/full_name.md): returns a full name
 
 ## Custom configuration
 
