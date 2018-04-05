@@ -1,10 +1,18 @@
 # Changelog
 
-## 3.1.0
+## 3.2.0
+
+- executive decision to remove some choice words from the dictionaries
 
 **New features!**
 
 - added a state method - create fun state names like "Californiguana" with `Cryptozoologist.state`
+
+## 3.1.0
+
+**New features!**
+
+- added a city method - generate an animal city with `Cryptozoologist.city`!
 
 ## 3.0.0
 

@@ -13,7 +13,7 @@ describe Cryptozoologist do
 
     it 'generates the number of sentences requested' do
       sentence = Cryptozoologist.lorem(3)
-      punctuation = sentence.gsub!(/\w/, "").gsub!(" ", "")
+      punctuation = sentence.scan(/[.|?|!]/)
       expect(punctuation.length).to eq(3)
     end
   end
@@ -28,7 +28,11 @@ describe Cryptozoologist do
     end
 
     describe('with quantity') do
+      let(:test_quantity_library) { ["quantity"] }
+
       before do
+        allow(Cryptozoologist::Dictionary).to receive(:send).and_call_original
+        allow(Cryptozoologist::Dictionary).to receive(:send).with(:quantity).and_return(test_quantity_library)
         Cryptozoologist.configure do |config|
           config.include = [:quantity]
           config.delimiter = "_"
@@ -41,7 +45,6 @@ describe Cryptozoologist do
       end
 
       it 'only has one word from the quantity list' do
-        Cryptozoologist.random
         random = Cryptozoologist.random.split("_")
         matches = Cryptozoologist::Dictionaries::Quantity.list.select do |word|
           random.include?(word)
@@ -90,6 +93,34 @@ describe Cryptozoologist do
 
     it 'handles a replacement word shorter than the remainder of the state name' do
       expect(Cryptozoologist.state("Oregon", "Rat", 1)).to eq('Orategon')
+    end
+  end
+
+  context '#city' do
+    before do
+      @city = Cryptozoologist.city
+    end
+
+    it 'should return a string' do
+      expect(@city).to be_instance_of(String)
+    end
+
+    it 'should include an animal' do
+      has_animal = false
+      Cryptozoologist::Dictionary.animals.each do |animal|
+        has_animal = @city.downcase.include?(animal) if @city.downcase.include?(animal)
+      end
+
+      expect(has_animal).to be true
+    end
+
+    it 'should include a city label' do
+      has_city = false
+      Cryptozoologist::Dictionary.cities.each do |city|
+        has_city = @city.downcase.include?(city) if @city.downcase.include?(city)
+      end
+
+      expect(has_city).to be true
     end
   end
 end

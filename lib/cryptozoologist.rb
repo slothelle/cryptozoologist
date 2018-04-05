@@ -47,7 +47,10 @@ module Cryptozoologist
     Generator.state(desired_state, desired_library, desired_replace_index)
   end
 
-  protected
+  def self.city
+    Generator.city
+  end
+
   def self.subdictionaries
     Dictionaries.library
   end

@@ -73,7 +73,17 @@ module Cryptozoologist
       else
         handle_one_word(state_name, libraries, desired_replace_index)
       end
+    end
 
+    def city
+      exclude = Cryptozoologist.configuration.exclude
+      cities_words = Cryptozoologist::Cities::Words.list
+      cities_terminologies = Cryptozoologist::Cities::Terminologies.list
+      words_formatted = exclude.include?(:words) ? [] : cities_words.map { |word| " #{word.capitalize}" }
+      terminologies = exclude.include?(:terminologies) ? [] : cities_terminologies
+      city_labels =  words_formatted + terminologies
+
+      "#{one_word_animals.sample.capitalize}#{city_labels.sample}"
     end
 
     private
@@ -117,6 +127,8 @@ module Cryptozoologist
       replacement_options.sample
     end
 
-
+    def one_word_animals
+      Dictionary.animals.select {|animal| animal.split(' ').count == 1}
+    end
   end
 end

@@ -33,5 +33,9 @@ module Cryptozoologist
     def states
       Dictionaries.states
     end
+
+    def cities
+      Dictionaries.cities
+    end
   end
 end
