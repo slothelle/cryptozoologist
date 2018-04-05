@@ -49,6 +49,7 @@ module Cryptozoologist
 
     def states
       States.list
+    end
 
     def cities
       create_list(:cities)
