@@ -51,6 +51,10 @@ module Cryptozoologist
       Addresses.list
     end
 
+    def states
+      States.list
+    end
+
     def cities
       create_list(:cities)
     end
@@ -69,8 +73,8 @@ module Cryptozoologist
       list.flatten
     end
 
-    def filter_library(key)
-      dictionaries = library[key].reject do |key, value|
+    def filter_library(filter_key)
+      dictionaries = library[filter_key].reject do |key, _value|
         Cryptozoologist.configuration.exclude.include?(key)
       end
       dictionaries.values

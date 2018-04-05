@@ -77,6 +77,25 @@ describe Cryptozoologist do
     end
   end
 
+  context '#state' do
+
+    it 'handles a one word state' do
+      expect(Cryptozoologist.state("Washington", "Seal", 2)).to eq('Wasealhington')
+    end
+
+    it 'handles a two word state' do
+      expect(Cryptozoologist.state("North Dakota", "Necktie", 0)).to eq('Necktie Dakota')
+    end
+
+    it 'handles a replacement word longer than the remainder of the state name' do
+      expect(Cryptozoologist.state("California", "Iguana", 8)).to eq('Californiguana')
+    end
+
+    it 'handles a replacement word shorter than the remainder of the state name' do
+      expect(Cryptozoologist.state("Oregon", "Rat", 1)).to eq('Orategon')
+    end
+  end
+
   context '#city' do
     before do
       @city = Cryptozoologist.city

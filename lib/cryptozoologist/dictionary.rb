@@ -30,6 +30,10 @@ module Cryptozoologist
       Dictionaries.addresses
     end
 
+    def states
+      Dictionaries.states
+    end
+
     def cities
       Dictionaries.cities
     end

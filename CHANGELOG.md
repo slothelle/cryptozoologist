@@ -1,11 +1,17 @@
 # Changelog
 
-## 3.2.0 
+## 3.2.0
 
-- added a name method - generates an user animal name.
-`Cryptozoologist.name`!
+- executive decision to remove some choice words from the dictionaries
+
+**New features!**
+
+- added a state method - create fun state names like "Californiguana" with `Cryptozoologist.state`
+- added a name method - generates an user animal name `Cryptozoologist.name`!
 
 ## 3.1.0
+
+**New features!**
 
 - added a city method - generate an animal city with `Cryptozoologist.city`!
 
