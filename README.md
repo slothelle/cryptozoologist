@@ -32,6 +32,7 @@ Cryptozoologist provides four main functions:
 * [`Cryptozoologist.lorem(sentence_count)`](docs/lorem.md): returns `sentence_count` number of sentences
 * [`Cryptozoologist.street_address`](docs/street_address.md): returns a string formatted to US street address standards
 * [`Cryptozoologist.city`](docs/city.md): returns a string representing a city
+* [`Cryptozoologist.state`](docs/state.md): returns a string representing a state
 
 ## Custom configuration
 
