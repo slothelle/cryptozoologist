@@ -30,6 +30,14 @@ If you'd like to suggest a new feature, create a new issue using the [new featur
 
 Encountered a bug? Oh no! File a bug report using the [bug report template](ISSUE_TEMPLATES/bug_report.md).
 
+## Code style
+
+Crytozoologist uses Rubocop to ensure the ruby code follows a consistent style. This is checked by codeclimate whenyou contribute a pull request on github. You can check the style yourself by running rubocop
+```
+bundle exec rubocop
+```
+
+
 ## Releasing
 
 I try and release the gem fairly regularly when I add features. Whatever is on master is generally what's available in the most recent version release!
